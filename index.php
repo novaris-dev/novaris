@@ -14,8 +14,8 @@ require_once 'vendor/autoload.php';
 # Create a new application.
 # ------------------------------------------------------------------------------
 #
-# Creates or gets the instances of the Blush application. Access this instance
-# via the `app()` function or `\Blush\App` static class after the application
+# Creates or gets the instances of the Novaris application. Access this instance
+# via the `app()` function or `\Novaris\App` static class after the application
 # has booted.
 
 $app = new Application( __DIR__ );
