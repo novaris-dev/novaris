@@ -21,7 +21,6 @@ return [
 		'path'       => '_posts',
 		'collection' => [ 'order' => 'desc' ],
 		'date_archives' => true,
-		'feed' => [ 'taxonomy' => 'category' ],
 		'routing' => [
 			'prefix' => 'blog',
 			'paths' => [
