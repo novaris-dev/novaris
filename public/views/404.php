@@ -1,17 +1,14 @@
 <?php $engine->include( 'header.default' ) ?>
-
-<div class="app-content">
-	<article class="entry entry--single">
-
-		<header class="entry__header">
-			<h1 class="entry__title"><?= e( $single->title() ) ?></h1>
+<section id="content" class="site-content">
+	<main id="main" class="content-area">
+		<article id="" class="post">
+		<header class="entry-header">
+			<h1 class="entry-title"><?= e( $entry->title() ); ?></h1>
 		</header>
-
-		<div class="entry__content">
-			<?= $single->content() ?>
+		<div class="entry-content">
+			<?= $entry->content() ?>
 		</div>
-
-	</article>
-</div>
-
+		</article>
+	</main>
+</section>
 <?php $engine->include( 'footer.default' ) ?>
