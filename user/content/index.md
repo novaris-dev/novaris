@@ -1,10 +1,10 @@
 ---
 title: "Welcome to Novaris"
 ---
-So, you’ve gone ahead and installed Novaris — a minimalist framework for flat-file websites. Bold move. But here’s the thing: if you’re not ready to deal with the quirks and hiccups (and trust me, they’re coming), you might want to rethink this decision. No? Still sticking around? Respect.
+Looks like you’ve taken the plunge and installed Novaris, the minimalist flat-file framework that doesn’t shy away from a little chaos. If you’re good with fixing the inevitable snags along the way, you’re in the right place. But if you’re second-guessing this — fair warning, it’s not too late to reconsider.
 
-Alright, let’s dive in.
+Still here? Alright, let’s break it down.
 
-The homepage content lives in the /user/content/index.md file. Yep, it’s really that simple. Want to whip up a new page at yoursite.com/about? Just drop a file in /user/content/about.md. Feeling fancy? You can even structure it with sub-directories, like /user/content/about/index.md.
+To edit your homepage, just go to /user/content/index.md. It’s all right there, plain and simple. Want to add an “About” page at yoursite.com/about? Just create a file called /user/content/about.md. And if you prefer nesting things, use sub-directories like /user/content/about/index.md.
 
-Novaris keeps things lean, but you’ll need to keep it in line. Ready for the ride?
+With Novaris, simplicity is key, but staying on top of things is your job. Ready to make it yours?
