@@ -1,6 +1,7 @@
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<?= Novaris\PoweredBy::render(); ?>
+		<?= Novaris\PoweredBy::render(); ?><br />
+		Powered By <a href="https://github.com/novaris-dev">Novaris</a>
 	</div>
 </footer>
 </div>
