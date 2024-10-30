@@ -14,10 +14,11 @@
 	<header id="masthead" class="site-header">
 		<div class="branding-navigation">
 			<div class="site-branding">
-				<h1 class="site-title">
-					<a href="<?= e( url() ); ?>"><?= e( config( 'app.title') ); ?></a>
-				</h1>
-				<span><?= e( config( 'app.tagline' ) ); ?></span>
+				<?php Novaris\Theme\Site\display_site_title(); ?>
+				<?php if ( config( 'app.tagline' ) ) { ?>
+					<span class="sep" aria-hidden="true">&middot;</span>
+					<?php Novaris\Theme\Site\display_site_description();
+				} ?>
 			</div>
 			<?php $engine->include( 'nav/menu/primary' ) ?>
 		</div>
