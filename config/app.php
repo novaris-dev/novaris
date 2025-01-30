@@ -18,7 +18,7 @@
 
 return [
 	// URL to the site.
-	'uri' => env( 'APP_URI', 'https://nova.benjlu.com' ),
+	'uri' => env( 'APP_URL' ),
 
 	// Select from a list of supported timezones:
 	// https://www.php.net/manual/en/timezones.php
