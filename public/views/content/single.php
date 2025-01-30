@@ -3,16 +3,16 @@
 		<article id="" class="post">
             <header class="entry-header">
                 <div class="entry-metadata">
-                    <?= $entry->date(); ?>
+                    <?= $single->date(); ?>
                 </div>
-                <h1 class="entry-title"><?= e( $entry->title() ); ?></h1>
+                <h1 class="entry-title"><?= e( $single->title() ); ?></h1>
             </header>
             <div class="entry-content">
-                <?= $entry->content() ?>
+                <?= $single->content() ?>
             </div>
             <footer class="entry-footer">
 
-			<?php if ( $tags = $entry->terms( 'category' ) ) : ?>
+			<?php if ( $tags = $single->terms( 'category' ) ) : ?>
 				<div class="entry-terms">
 					Tagged:
 					<?php foreach ( $tags as $tag ) : ?>
