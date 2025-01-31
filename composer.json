@@ -15,5 +15,7 @@
 	},
     "require": {
         "novaris-dev/framework": "dev-develop"
-    }
+    },
+	"minimum-stability": "dev",
+	"prefer-stable": true
 }
