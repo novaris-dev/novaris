@@ -22,11 +22,7 @@ let exportPath = 'amicable';
 
 // Theme root-level files to include.
 let files = [
-	'functions.php',
 	'index.php',
-	'readme.txt',
-	'screenshot.png',
-	'style.css'
 ];
 
 // Folders to include.
