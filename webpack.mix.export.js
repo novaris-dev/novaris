@@ -31,7 +31,6 @@ let folders = [
     'config',
 	'public',
 	'storage',
-	'user',
 	'vendor'
 ];
 
