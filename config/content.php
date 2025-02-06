@@ -18,24 +18,15 @@ return [
 
 	// Create custom content type and taxonomy for blog posts.
 	'post' => [
-		'path'       => '_posts',
+		'path'       => 'blog',
 		'collection' => [ 'order' => 'desc' ],
 		'date_archives' => true,
-		'routing' => [
-			'prefix' => 'blog',
-			'paths' => [
-				'single' => '{year}/{month}/{day}/{name}'
-			]
-		]
 	],
 	'category' => [
-		'path'            => '_categories',
+		'path'            => 'category',
 		'collection'      => [ 'number' => 9999 ],
 		'taxonomy'        => true,
 		'term_collect'    => 'post',
 		'term_collection' => [ 'order' => 'desc' ],
-		'routing' => [
-			'prefix' => 'category',
-		]
 	],
 ];
