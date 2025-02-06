@@ -17,6 +17,10 @@
 
 
 return [
+
+	// Title
+	'title' => 'Amicable',
+	
 	// URL to the site.
 	'uri' => env( 'APP_URL' ),
 
