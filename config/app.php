@@ -20,7 +20,10 @@ return [
 
 	// Title
 	'title' => 'Amicable',
-	
+
+	// Description
+	'tagline' => 'A Novaris Theme',
+
 	// URL to the site.
 	'uri' => env( 'APP_URL' ),
 
