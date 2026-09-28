@@ -6,85 +6,102 @@
  *
  * Usage:
  *   npm run build
- *   node scripts/export-theme.js
+ *   node export-theme.js
  */
 
-const fs = require('fs');
+import fs from 'node:fs';
+import path from 'node:path';
+
 const fsp = fs.promises;
-const path = require('path');
 
 // === Configure ===
 const exportPath = 'amicable'; // folder to export into
 
-// root-level files to include
+// Root-level files to include.
 const files = [
-  'theme.json',
+	'theme.json',
 ];
 
-// folders to include
+// Folders to include.
 const folders = [
-  'app',
-  'config',
-  'public',
+	'app',
+	'config',
+	'public',
 ];
 
-// items to delete after copy (same cleanup as your old script, adjusted for Vite)
+// Items to delete after copy.
 const removeAfterCopy = [
-  // Keep Vite's public/manifest.json on purpose.
-  path.join(exportPath, 'vendor/bin'),
-  path.join(exportPath, 'vendor/composer/installers'),
+	// Keep Vite's public/assets/manifest.json on purpose.
+	path.join( exportPath, 'vendor/bin' ),
+	path.join( exportPath, 'vendor/composer/installers' ),
 ];
 
 // === Helpers ===
-async function exists(p) {
-  try { await fsp.access(p); return true; } catch { return false; }
+async function exists( filePath ) {
+	try {
+		await fsp.access( filePath );
+
+		return true;
+	} catch {
+		return false;
+	}
 }
 
-async function rimraf(p) {
-  await fsp.rm(p, { recursive: true, force: true });
+async function rimraf( filePath ) {
+	await fsp.rm( filePath, {
+		recursive: true,
+		force: true,
+	} );
 }
 
-async function copyFileIfExists(src, dest) {
-  if (await exists(src)) {
-    await fsp.mkdir(path.dirname(dest), { recursive: true });
-    await fsp.copyFile(src, dest);
-  }
+async function copyFileIfExists( source, destination ) {
+	if ( await exists( source ) ) {
+		await fsp.mkdir( path.dirname( destination ), {
+			recursive: true,
+		} );
+
+		await fsp.copyFile( source, destination );
+	}
 }
 
-async function copyDirIfExists(src, dest) {
-  if (await exists(src)) {
-    // Node 16.7+ supports fs.cp
-    await fsp.cp(src, dest, { recursive: true, force: true });
-  }
+async function copyDirIfExists( source, destination ) {
+	if ( await exists( source ) ) {
+		await fsp.cp( source, destination, {
+			recursive: true,
+			force: true,
+		} );
+	}
 }
 
 async function main() {
-  // 1) start clean
-  await rimraf(exportPath);
+	// Start clean.
+	await rimraf( exportPath );
 
-  // 2) copy listed files
-  for (const file of files) {
-    const src = path.resolve(file);
-    const dest = path.join(exportPath, file);
-    await copyFileIfExists(src, dest);
-  }
+	// Copy listed files.
+	for ( const file of files ) {
+		const source      = path.resolve( file );
+		const destination = path.join( exportPath, file );
 
-  // 3) copy listed folders
-  for (const folder of folders) {
-    const src = path.resolve(folder);
-    const dest = path.join(exportPath, folder);
-    await copyDirIfExists(src, dest);
-  }
+		await copyFileIfExists( source, destination );
+	}
 
-  // 4) post-copy cleanup
-  for (const p of removeAfterCopy) {
-    await rimraf(p);
-  }
+	// Copy listed folders.
+	for ( const folder of folders ) {
+		const source      = path.resolve( folder );
+		const destination = path.join( exportPath, folder );
 
-  console.log(`✅ Export complete → ${exportPath}`);
+		await copyDirIfExists( source, destination );
+	}
+
+	// Post-copy cleanup.
+	for ( const filePath of removeAfterCopy ) {
+		await rimraf( filePath );
+	}
+
+	console.log( `Export complete → ${exportPath}` );
 }
 
-main().catch(err => {
-  console.error('Export failed:', err);
-  process.exit(1);
-});
+main().catch( ( error ) => {
+	console.error( 'Export failed:', error );
+	process.exit( 1 );
+} );
