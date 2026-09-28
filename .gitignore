@@ -1,5 +1,7 @@
 /node_modules/
+/public/assets/
 /vendor/
 
 .env
 .env.local
+/public/assets/manifest.json
