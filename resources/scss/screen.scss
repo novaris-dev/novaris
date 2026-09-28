@@ -1,0 +1,87 @@
+////
+/// Primary Screen Stylesheet
+///
+/// This is the primary stylesheet for the Novaris theme. It does not contain
+/// styles directly. Instead, it loads each stylesheet layer in cascade order.
+///
+/// @group  Styles
+/// @author Benjamin Lu
+////
+
+// -----------------------------------------------------------------------------
+// Settings
+// -----------------------------------------------------------------------------
+//
+// Global configuration, design tokens, variables, and other settings used
+// throughout the theme.
+//
+
+@forward '01.settings';
+
+// -----------------------------------------------------------------------------
+// Tools
+// -----------------------------------------------------------------------------
+//
+// Functions and mixins used throughout the theme. This layer should not
+// generate CSS on its own.
+//
+
+@forward '02.tools';
+
+// -----------------------------------------------------------------------------
+// Generics
+// -----------------------------------------------------------------------------
+//
+// Low-level global styles such as resets, normalization, and box-sizing rules.
+//
+
+@forward '03.generics';
+
+// -----------------------------------------------------------------------------
+// Elements
+// -----------------------------------------------------------------------------
+//
+// Default styles for bare HTML elements such as headings, paragraphs, links,
+// blockquotes, lists, and forms.
+//
+
+@forward '04.elements';
+
+// -----------------------------------------------------------------------------
+// Objects
+// -----------------------------------------------------------------------------
+//
+// Structural design patterns and reusable abstractions with minimal styling.
+//
+
+@forward '05.objects';
+
+// -----------------------------------------------------------------------------
+// Layouts
+// -----------------------------------------------------------------------------
+//
+// Global page layouts and structural regions such as the header, content area,
+// sidebar, and footer.
+//
+
+@forward '06.layouts';
+
+// -----------------------------------------------------------------------------
+// Components
+// -----------------------------------------------------------------------------
+//
+// Reusable interface components such as breadcrumbs, navigation, pagination,
+// cards, and widgets.
+//
+
+@forward '07.components';
+
+// -----------------------------------------------------------------------------
+// Utilities
+// -----------------------------------------------------------------------------
+//
+// Single-purpose helper and override classes. This layer is loaded last and
+// should take precedence over the layers above when necessary.
+//
+
+@forward '08.utilities';
