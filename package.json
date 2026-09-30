@@ -14,14 +14,17 @@
     "bugs": {
         "url": "https://github.com/novaris-dev/novaris/issues"
     },
-    "devDependencies": {
-        "sass": "^1.105.0",
-        "vite": "^8.3.1"
-    },
-    "scripts": {
-        "build": "npm run prod && npm run export",
-        "watch": "vite build --watch --minify=false",
-        "prod": "vite build",
-        "export": "node export-theme.js"
-    }
-}
+	"devDependencies": {
+		"concurrently": "^10.0.5",
+		"sass": "^1.93.3",
+		"vite": "^7.2.1"
+	},
+	"scripts": {
+		"build": "npm run prod && npm run export",
+		"dev": "vite build --minify=false && concurrently \"npm:watch:vite\" \"npm:watch:novaris\"",
+		"watch:vite": "vite build --watch --minify=false",
+		"watch:novaris": "composer novaris export -- --watch --url=https://novarisframework.codestacks.cc",
+		"prod": "vite build",
+		"export": "node export-theme.js"
+	}
+} 
