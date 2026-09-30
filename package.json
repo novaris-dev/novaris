@@ -1,30 +1,29 @@
-{
-    "name": "novaris",
-    "description": "Novaris is a starter theme for the Novaris Content Management System, providing a clean and flexible foundation for building custom themes and content-driven websites.",
-    "version": "0.0.1",
-    "author": "Benjamin Lu",
-    "license": "GPL-2.0-or-later",
-    "type": "module",
-    "homepage": "https://github.com/novaris-dev/novaris",
-    "main": "resources/js/app.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/novaris-dev/novaris.git"
-    },
-    "bugs": {
-        "url": "https://github.com/novaris-dev/novaris/issues"
-    },
-	"devDependencies": {
-		"concurrently": "^10.0.5",
-		"sass": "^1.93.3",
-		"vite": "^7.2.1"
-	},
-	"scripts": {
-		"build": "npm run prod && npm run export",
-		"dev": "vite build --minify=false && concurrently \"npm:watch:vite\" \"npm:watch:novaris\"",
-		"watch:vite": "vite build --watch --minify=false",
-		"watch:novaris": "composer novaris export -- --watch --url=https://novarisframework.codestacks.cc",
-		"prod": "vite build",
-		"export": "node export-theme.js"
-	}
-} 
+    {
+        "name": "novaris",
+        "description": "Novaris is a starter theme for the Novaris Content Management System, providing a clean and flexible foundation for building custom themes and content-driven websites.",
+        "version": "0.0.1",
+        "author": "Benjamin Lu",
+        "license": "GPL-2.0-or-later",
+        "homepage": "https://github.com/novaris-dev/novaris",
+        "main": "resources/js/app.js",
+        "repository": {
+            "type": "git",
+            "url": "git+https://github.com/novaris-dev/novaris.git"
+        },
+        "bugs": {
+            "url": "https://github.com/novaris-dev/novaris/issues"
+        },
+        "devDependencies": {
+            "concurrently": "^10.0.5",
+            "sass": "^1.93.3",
+            "vite": "^7.2.1"
+        },
+        "scripts": {
+            "build": "npm run prod && npm run export",
+            "dev": "vite build --minify=false && concurrently \"npm:watch:vite\" \"npm:watch:novaris\"",
+            "watch:vite": "vite build --watch --minify=false",
+            "watch:novaris": "composer novaris export -- --watch --url=https://novarisframework.codestacks.cc",
+            "prod": "vite build",
+            "export": "node export-theme.js"
+        }
+    } 
