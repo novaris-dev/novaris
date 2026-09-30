@@ -6,7 +6,7 @@
  *
  * Usage:
  *   npm run build
- *   node scripts/export-theme.js
+ *   node export-theme.js
  */
 
 const fs = require('fs');
