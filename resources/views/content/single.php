@@ -10,7 +10,7 @@
 					<?= e( $single->title() ); ?>
 				</h1>
 			</header>
-			<?php if ( $thumbnail = $single->thumbnail( 'amicable-landscape-extra-large' ) ) : ?>
+			<?php if ( $thumbnail = $single->thumbnail( 'novaris-landscape-extra-large' ) ) : ?>
 				<picture class="entry__thumbnail">
 					<img class="entry__thumbnail" src="<?= e( $thumbnail->url() ); ?>" width="<?= $thumbnail->width(); ?>" height="<?= $thumbnail->height(); ?>" alt="">
 				</picture>

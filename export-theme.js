@@ -14,7 +14,7 @@ const fsp = fs.promises;
 const path = require('path');
 
 // === Configure ===
-const exportPath = 'amicable'; // folder to export into
+const exportPath = 'novaris'; // folder to export into
 
 // root-level files to include
 const files = [
