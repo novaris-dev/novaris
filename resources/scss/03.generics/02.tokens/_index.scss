@@ -1,0 +1,33 @@
+////
+/// Tokens
+///
+/// Turns the settings into CSS custom properties, so colors, fonts, and
+/// widths can change at run time (a Customizer setting, a child theme)
+/// without rebuilding:
+///
+///   --color-primary, --color-muted, …   from $colors
+///   --font-body, --font-heading, …      from $font-families
+///   --width-narrow, --width-wide, …     from $content-widths
+///
+/// The color and font utility classes use these properties.
+///
+/// @group Generics
+////
+
+@use 'sass:meta';
+@use '../../01.settings' as settings;
+
+:root {
+	@each $name, $value in settings.$colors {
+		--color-#{ $name }: #{ $value };
+	}
+
+	// `meta.inspect()` keeps the quotes around names like 'Segoe UI'.
+	@each $name, $value in settings.$font-families {
+		--font-#{ $name }: #{ meta.inspect( $value ) };
+	}
+
+	@each $name, $value in settings.$content-widths {
+		--width-#{ $name }: #{ $value };
+	}
+}

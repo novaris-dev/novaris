@@ -1,0 +1,42 @@
+////
+/// Alignments
+///
+/// `.alignleft` / `.alignright` float with text wrapping; `.aligncenter`
+/// centers a block; `.alignwide` breaks out of the text column up to
+/// `--width-wide`; `.alignfull` spans the screen.
+///
+/// @group Utilities
+////
+
+.alignleft {
+	float: left;
+	margin: 0 1.5rem 1rem 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 1rem 1.5rem;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.alignwide {
+	--align-wide: min( var( --width-wide ), calc( 100vw - 2rem ) );
+
+	margin-left: calc( 50% - var( --align-wide ) / 2 );
+	margin-right: calc( 50% - var( --align-wide ) / 2 );
+	max-width: none;
+	width: var( --align-wide );
+}
+
+.alignfull {
+	margin-left: calc( 50% - 50vw );
+	margin-right: calc( 50% - 50vw );
+	max-width: 100vw;
+	width: 100vw;
+}

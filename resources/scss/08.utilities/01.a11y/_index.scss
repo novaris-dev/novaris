@@ -1,0 +1,37 @@
+////
+/// Accessibility
+///
+///   <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+///
+/// @group Utilities
+////
+
+// Hidden visually, still read by screen readers. Shown again on focus, so
+// a skip link appears for keyboard users.
+.screen-reader-text {
+	border: 0;
+	clip: rect( 1px, 1px, 1px, 1px );
+	clip-path: inset( 50% );
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+
+	&:focus,
+	&:active {
+		background: var( --color-background );
+		clip: auto;
+		clip-path: none;
+		color: var( --color-foreground );
+		display: block;
+		height: auto;
+		left: 0.5rem;
+		padding: 0.5rem 1rem;
+		top: 0.5rem;
+		width: auto;
+		z-index: 100000;
+	}
+}
