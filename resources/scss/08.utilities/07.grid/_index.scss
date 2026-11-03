@@ -1,0 +1,29 @@
+////
+/// Grid
+///
+///   .grid-cols-{1–12}  equal columns
+///   .col-span-{1–12}   an item spanning several columns; .col-span-full
+///
+/// Both are responsive: `.grid .grid-cols-1 .md:grid-cols-3`.
+/// Turn an element into a grid with `.grid` (09.layout).
+///
+/// @group Utilities
+////
+
+@use 'sass:map';
+@use 'sass:string';
+@use '../../02.tools' as tools;
+
+/// How many columns to generate classes for.
+$grid-columns: 12 !default;
+
+$_cols: ();
+$_spans: ( full: string.unquote( '1 / -1' ) );
+
+@for $i from 1 through $grid-columns {
+	$_cols:  map.merge( $_cols, ( $i: repeat( $i, minmax( 0, 1fr ) ) ) );
+	$_spans: map.merge( $_spans, ( $i: span $i ) );
+}
+
+@include tools.utility( grid-cols, grid-template-columns, $_cols, $responsive: true );
+@include tools.utility( col-span, grid-column, $_spans, $responsive: true );

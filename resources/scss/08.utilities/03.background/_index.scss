@@ -1,0 +1,12 @@
+////
+/// Backgrounds
+///
+/// `.bg-{color}` for every entry in `$colors`: `.bg-primary`, `.bg-surface`.
+///
+/// @group Utilities
+////
+
+@use '../../01.settings' as settings;
+@use '../../02.tools' as tools;
+
+@include tools.utility( bg, background-color, tools.vars( color, settings.$colors ) );

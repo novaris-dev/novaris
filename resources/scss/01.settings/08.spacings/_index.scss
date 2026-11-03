@@ -1,0 +1,27 @@
+////
+/// Spacings
+///
+/// One spacing scale for margin, padding, and gap. Steps are multiples of
+/// `$spacing-unit` (0.25rem = 4px), so `.mt-4` is 1rem and `.p-8` is 2rem.
+///
+/// @group Settings
+////
+
+@use 'sass:map';
+
+$spacing-unit: 0.25rem !default;
+
+/// Steps to generate. Add a number to get a new class: adding 7 gives
+/// `.mt-7`, `.p-7`, `.gap-7`… (7 × 0.25rem).
+$spacing-steps: ( 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24 ) !default;
+
+/// The scale itself, built from the steps, plus `px` (1px).
+$spacings: ( px: 1px );
+
+@each $step in $spacing-steps {
+	@if $step == 0 {
+		$spacings: map.merge( $spacings, ( 0: 0 ) );
+	} @else {
+		$spacings: map.merge( $spacings, ( $step: $spacing-unit * $step ) );
+	}
+}

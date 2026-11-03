@@ -1,0 +1,44 @@
+////
+/// Fonts
+///
+/// `$font-families` maps a name to a font stack. Each becomes a custom
+/// property (`--font-heading`) and a class (`.font-heading`). Add any font
+/// your site loads, e.g. `date: ( 'Tangerine', cursive )` → `.font-date`.
+///
+/// Sizes (`.text-xl`), weights (`.font-bold`), and line heights
+/// (`.leading-tight`) work the same way.
+///
+/// @group Settings
+////
+
+$font-families: (
+	body:    ( system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif ),
+	heading: ( system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif ),
+	mono:    ( ui-monospace, Menlo, Consolas, monospace )
+) !default;
+
+$font-sizes: (
+	xs:   0.75rem,
+	sm:   0.875rem,
+	base: 1rem,
+	lg:   1.125rem,
+	xl:   1.25rem,
+	2xl:  1.5rem,
+	3xl:  1.875rem,
+	4xl:  2.25rem
+) !default;
+
+$font-weights: (
+	light:    300,
+	normal:   400,
+	medium:   500,
+	semibold: 600,
+	bold:     700
+) !default;
+
+$line-heights: (
+	none:    1,
+	tight:   1.25,
+	normal:  1.5,
+	relaxed: 1.75
+) !default;

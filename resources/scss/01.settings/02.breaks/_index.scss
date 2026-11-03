@@ -1,0 +1,18 @@
+////
+/// Breakpoints
+///
+/// Screen widths where layouts change. Mobile first: styles without a
+/// breakpoint apply to phones, then `up( md )` adds styles from 768px.
+///
+/// The names are also the prefixes of responsive utility classes:
+/// `.md:flex` applies `display: flex` from the `md` width up.
+///
+/// @group Settings
+////
+
+$breakpoints: (
+	sm: 640px,  // large phones
+	md: 768px,  // tablets: the usual mobile/desktop switch
+	lg: 1024px, // laptops: sidebars
+	xl: 1280px  // desktops
+) !default;

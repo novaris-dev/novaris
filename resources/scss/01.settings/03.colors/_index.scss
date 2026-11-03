@@ -1,0 +1,28 @@
+////
+/// Colors
+///
+/// Every color becomes:
+///
+///   - a CSS custom property: `primary` → `--color-primary`
+///   - text, background, and border classes: `.text-primary`,
+///     `.bg-primary`, `.border-primary`
+///
+/// Classes use the custom properties, so a color can also be changed
+/// without rebuilding: `:root { --color-primary: #e63946; }`.
+///
+/// @group Settings
+////
+
+$colors: (
+	foreground:  #222222,
+	background:  #ffffff,
+	muted:       #6b7280,
+	border:      #e5e7eb,
+	surface:     #f9fafb,
+	primary:     #1d4ed8,
+	on-primary:  #ffffff,
+	black:       #000000,
+	white:       #ffffff,
+	transparent: transparent,
+	current:     currentColor
+) !default;

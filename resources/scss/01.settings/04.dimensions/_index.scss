@@ -1,0 +1,14 @@
+////
+/// Dimensions
+///
+/// Content widths. Each becomes a custom property (`--width-wide`) and a
+/// max-width class (`.max-w-wide`).
+///
+/// @group Settings
+////
+
+$content-widths: (
+	narrow: 48rem,
+	medium: 64rem,
+	wide:   80rem
+) !default;
