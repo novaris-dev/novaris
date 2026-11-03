@@ -9,7 +9,7 @@ Whether you're building a blog, personal website, documentation site, or somethi
 ## Requirements
 Before installing Novaris, make sure your environment meets the following requirements:
 
-* PHP 8.0 or higher
+* PHP 8.2 or higher
 * Composer
 * Apache or Nginx
 
