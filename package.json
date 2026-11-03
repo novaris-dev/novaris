@@ -1,7 +1,7 @@
     {
         "name": "novaris",
         "description": "Novaris is a starter theme for the Novaris Content Management System, providing a clean and flexible foundation for building custom themes and content-driven websites.",
-        "version": "0.0.1",
+        "version": "0.0.3",
         "author": "Benjamin Lu",
         "license": "GPL-2.0-or-later",
         "homepage": "https://github.com/novaris-dev/novaris",
