@@ -36,8 +36,32 @@ npm install
 
 Start the frontend development environment:
 <pre>
-npm run watch
+npm run dev
 </pre>
+
+## Starting your own theme
+
+Novaris doubles as a starter theme. When you copy it to build your own, give the copy its own identity first. The framework reads `theme.json` to install and update themes, so leaving the Novaris values in place makes your site check the Novaris repository for updates.
+
+1. **`theme.json`**: set your theme's details:
+   <pre>
+   {
+       "name": "My Theme",
+       "slug": "my-theme",
+       "version": "0.0.1",
+       "repository": "your-name/my-theme"
+   }
+   </pre>
+   - `slug` is the theme's folder name, in lowercase with hyphens.
+   - `version` stays at `0.0.1` until your first release. Then keep it in step with your release tags, because updates are found by comparing it with the latest GitHub release of `repository`.
+   - `repository` is your theme's GitHub `owner/name`. Leave it empty (`""`) if you don't publish releases; the update check is skipped when it's missing.
+2. **`export-theme.js`**: change `exportPath` from `'novaris'` to your slug.
+3. **`package.json`**:
+   - Change `name`, `description`, `author`, `homepage`, `repository` and `bugs` to your own.
+   - In the `watch:novaris` script, replace the `--url=` address with your site's address.
+4. **`composer.json`**: change `name` (for example `your-name/my-theme`).
+
+The Novaris version in `theme.json` and `package.json` stays at `0.0.1` on purpose, so every new theme starts from there. Novaris releases themselves are tracked in `changelog.md` and the git tags.
 
 ## Documentation
 
